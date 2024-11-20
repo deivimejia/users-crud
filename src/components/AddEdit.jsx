@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaSave } from 'react-icons/fa';
+import '../styles/AddEdit.css';
 
 function AddEdit({ user, onSave }) {
 	const { register, handleSubmit, reset } = useForm();
@@ -29,37 +29,55 @@ function AddEdit({ user, onSave }) {
 	};
 
 	return (
-		<div>
-			<h2>{user ? 'Upload' : 'Register'} </h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div>
-					<label>Name: </label>
-					<input type="text" {...register('first_name')} />
+		<div className="form">
+			<h2 className="form__tittle">{user ? 'Upload' : 'Register'} </h2>
+			<form className="form__content" onSubmit={handleSubmit(onSubmit)}>
+				<div className="form__group">
+					<label className="form__label">Name: </label>
+					<input
+						className="form__input"
+						type="text"
+						{...register('first_name')}
+					/>
 				</div>
-				<div>
-					<label>Last Name: </label>
-					<input type="text" {...register('last_name')} />
+				<div className="form__group">
+					<label className="form__label">Last Name: </label>
+					<input
+						className="form__input"
+						type="text"
+						{...register('last_name')}
+					/>
 				</div>
-				<div>
-					<label>E-mai: </label>
-					<input type="email" {...register('email')} />
+				<div className="form__group">
+					<label className="form__label">E-mai: </label>
+					<input className="form__input" type="email" {...register('email')} />
 				</div>
-				<div>
-					<label>Pass-word: </label>
-					<input type="password" {...register('password')} />
+				<div className="form__group">
+					<label className="form__label">Pass-word: </label>
+					<input
+						className="form__input"
+						type="password"
+						{...register('password')}
+					/>
 				</div>
-				<div>
-					<label>Birthday: </label>
-					<input type="date" {...register('birthday')} />
+				<div className="form__group">
+					<label className="form__label">Birthday: </label>
+					<input
+						className="form__input"
+						type="date"
+						{...register('birthday')}
+					/>
 				</div>
-				<div>
-					<label>User Photo: </label>
-					<input type="url" {...register('image_url')} />
+				<div className="form__group">
+					<label className="form__label">User Photo: </label>
+					<input
+						className="form__input"
+						type="url"
+						{...register('image_url')}
+					/>
 				</div>
-				<button type="submit">
-					{' '}
+				<button className="form__submit" type="submit">
 					{user ? 'Upload' : 'Save'}
-					<FaSave />
 				</button>
 			</form>
 		</div>

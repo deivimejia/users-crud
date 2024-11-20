@@ -9,35 +9,42 @@ function UserCard({ user, openEdit, deleteUser }) {
 			<h3 className="card__name">
 				{user?.first_name} {user?.last_name}{' '}
 			</h3>
-			<div className="card__info">
+			<div className="card__body">
 				<div>
-					<span className="card__label">Email: </span> {user?.email}
+					<div className="card__info">
+						<div>
+							<span className="card__label">Email: </span> {user?.email}
+						</div>
+						<div>
+							<span className="card__label">Birthday: </span>
+							<span className="card__data">
+								<FaBirthdayCake className="card__icon" />
+								{user?.birthday}
+							</span>
+						</div>
+					</div>
 				</div>
 				<div>
-					<span className="card__label">Birthday: </span>
-					<span className="card__data">
-						<FaBirthdayCake className="card__icon" />
-						{user?.birthday}
-					</span>
+					<img
+						className="card__image"
+						src={
+							user?.image_url
+								? user.image_url
+								: 'https://cdn-icons-png.flaticon.com/512/8860/8860512.png'
+						}
+						alt={user?.first_name}
+						width={100}
+					/>
 				</div>
-			</div>
-			<div>
-				<img
-					className="card__image"
-					src={
-						user?.image_url
-							? user.image_url
-							: 'https://w7.pngwing.com/pngs/857/213/png-transparent-man-avatar-user-business-avatar-icon.png'
-					}
-					alt={user?.first_name}
-					width={100}
-				/>
 			</div>
 			<div className="card__btn">
-				<button onClick={() => openEdit(user)}>
+				<button className="btn btn--edit" onClick={() => openEdit(user)}>
 					<GrEdit />
 				</button>
-				<button onClick={() => deleteUser(user?.id)}>
+				<button
+					className="btn btn--delete"
+					onClick={() => deleteUser(user?.id)}
+				>
 					<FaTrashCanArrowUp />
 				</button>
 			</div>
@@ -46,4 +53,4 @@ function UserCard({ user, openEdit, deleteUser }) {
 }
 
 export default UserCard;
-/*  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJF3UmhrSpByLU1vrDk3Ona_ikUOhTgQetTg&s */
+/*  https://st3.depositphotos.com/1441511/18503/i/450/depositphotos_185034814-stock-photo-programming-man-working-on-computer.jpg */

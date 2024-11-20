@@ -1,9 +1,9 @@
 import React from 'react';
 import UserCard from './UserCard';
-
+import '../styles/UserList.css';
 function UserList({ users, openEdit, deleteUser }) {
 	return (
-		<div>
+		<div className="cards">
 			{users?.map((user) => (
 				<UserCard
 					key={user.id}

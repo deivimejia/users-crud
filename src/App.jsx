@@ -6,6 +6,7 @@ import UserList from './components/UserList';
 import Modal from './components/Modal';
 import Loading from './components/Loading';
 import Header from './components/Header';
+import './App.css';
 const baseUrl = 'https://users-crud-api-81io.onrender.com/api/v1';
 
 function App() {
@@ -59,7 +60,7 @@ function App() {
 		<Layout>
 			<Header openAdd={openAdd} />
 
-			<div>
+			<div className="container">
 				{loading ? (
 					<Loading />
 				) : (

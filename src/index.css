@@ -1,5 +1,9 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	background-image: url('/public/pexels-matreding-4385862.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
 	line-height: 1.5;
 
