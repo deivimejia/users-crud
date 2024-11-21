@@ -20,6 +20,14 @@ function Modal({ isOpen, setIsOpen, children }) {
 		<div className={`modal${isOpen ? ' show--modal' : ''}`}>
 			<div className="modal--overlay" />
 			<div ref={modalRef} className="modal__container">
+				<button
+					className="btn__close"
+					onClick={() => {
+						setIsOpen(false);
+					}}
+				>
+					✖️
+				</button>
 				{children}
 			</div>
 		</div>
