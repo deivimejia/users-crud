@@ -1,6 +1,6 @@
 .card {
 	border: 1px solid #ccc;
-	background-color: #ffffff20;
+	background-color: #ffffff50;
 	backdrop-filter: brightness(1) blur(2px);
 	padding: 1.25em;
 	display: flex;
