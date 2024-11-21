@@ -4,6 +4,9 @@ import { GrEdit } from 'react-icons/gr';
 import { FaTrashCanArrowUp } from 'react-icons/fa6';
 import '../styles/UserCard.css';
 function UserCard({ user, openEdit, deleteUser }) {
+	const birthday = user?.birthday;
+	console.log(typeof birthday);
+	console.log(birthday.slice(0, 10));
 	return (
 		<div className="card">
 			<h3 className="card__name">
@@ -12,19 +15,19 @@ function UserCard({ user, openEdit, deleteUser }) {
 			<div className="card__body">
 				<div>
 					<div className="card__info">
-						<div>
+						<div className="card__label-email">
 							<span className="card__label">Email: </span> {user?.email}
 						</div>
 						<div>
 							<span className="card__label">Birthday: </span>
 							<span className="card__data">
 								<FaBirthdayCake className="card__icon" />
-								{user?.birthday}
+								{birthday.slice(0, 10)}
 							</span>
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="card__image-content">
 					<img
 						className="card__image"
 						src={

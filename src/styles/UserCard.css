@@ -1,22 +1,28 @@
 .card {
 	border: 1px solid #ccc;
-	/* background-color: #ece6e6; */
+	background-color: #ffffff20;
 	backdrop-filter: brightness(1) blur(2px);
 	padding: 1.25em;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-	color: #fff;
+	border-radius: 1em;
+	&:hover {
+		transform: scale(1.1);
+		transition-duration: 2s;
+	}
 }
 .card__body {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
 }
+.card__image-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .card__image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
+	width: 50%;
 }
 .card__name {
 	border-bottom: 1px solid #ccc;
@@ -31,8 +37,11 @@
 .card__label {
 	display: block;
 	text-transform: uppercase;
-	color: #615858;
+	color: #615858dc;
 	font-size: medium;
+}
+.card__label-email {
+	word-wrap: break-word;
 }
 .card__data {
 	display: flex;
@@ -41,7 +50,7 @@
 }
 .card__icon {
 	font-size: 16px;
-	color: rgb(82, 80, 187);
+	color: rgb(0, 0, 0);
 }
 
 .card__btn {
@@ -60,6 +69,10 @@
 	border: none;
 	font-size: 18px;
 	padding: 0.5em;
+	&:hover {
+		transition-duration: 2s;
+		transform: scale(1.1);
+	}
 }
 .btn--delete {
 	background-color: #fd5f5f;
